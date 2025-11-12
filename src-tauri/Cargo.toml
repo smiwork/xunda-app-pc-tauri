@@ -1,0 +1,40 @@
+[package]
+name = "app"
+version = "2.0.14"
+description = "xunda-app-pc-ts"
+authors = ["chenbaolong"]
+license = ""
+repository = ""
+edition = "2021"
+rust-version = "1.77.2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.3.1", features = [] }
+
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4"
+tauri = { version = "2.7.0", features = ["unstable"] }
+tauri-plugin-log = "2"
+tauri-plugin-dialog = "2" # 文件对话框
+tauri-plugin-http = "2" # http下载
+tauri-plugin-fs = "2" # http下载
+tauri-plugin-shell = "2.0.0"
+tauri-plugin-notification = { version = "2.0.0", features = [ "windows7-compat" ] }
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
+# If you use cargo directly instead of tauri's cli you can use this feature flag to switch between tauri's `dev` and `build` modes.
+# when `tauri dev` runs it is executed with `cargo run --no-default-features` if `devPath` is an URL
+default = [ "custom-protocol" ]
+# this feature is used for production builds where `devPath` points to the filesystem
+# DO NOT remove this
+custom-protocol = [ "tauri/custom-protocol" ]
