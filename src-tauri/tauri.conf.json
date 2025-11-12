@@ -7,7 +7,7 @@
     "frontendDist": "../dist",
     "devUrl": "http://localhost:5174/",
     "beforeDevCommand": "vite --host --mode tauri-dev",
-    "beforeBuildCommand": "vite build --mode tauri-prod"
+    "beforeBuildCommand": ""
   },
   "app": {
     "windows": [
