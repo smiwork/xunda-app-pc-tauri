@@ -1,0 +1,1 @@
+import{h as t}from"./index-oTvZ02lQ.js";function r(r){return t.get("system/printer/listPrinter",r)}function e(r,e){return t.post("system/printer/savePrinter",{data:r,id:e,version:"v2"})}function n(r){return t.post("system/printer/deletePrinter",{printerId:r})}function s(r){return t.get("system/printer/listTemplate",r)}export{s as a,n as d,r as l,e as s};

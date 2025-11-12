@@ -1,0 +1,1 @@
+import{h as c}from"./index-oTvZ02lQ.js";const a=a=>c.get("finance/account/listAccount",a),n=a=>c.get("finance/account/getAccount",{id:a}),t=(a,n)=>c.post("finance/account/saveAccount",{data:a,id:n}),o=a=>c.post("finance/account/deleteAccount",{id:a}),e=(a,n)=>c.post("finance/account/modifyAccountBalance",{data:n,id:a});export{o as d,n as g,a as l,e as m,t as s};

@@ -1,0 +1,1 @@
+import{h as e}from"./index-oTvZ02lQ.js";function t(){return e.get("/system/menu/getMenuList")}function n(t){return e.get("/system/menu/getMenuDetail",t)}function s(){return e.get("/system/menu/getMenuOptions")}export{t as a,s as b,n as g};

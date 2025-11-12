@@ -1,0 +1,1 @@
+import{_ as e}from"./GoodsHead.vue_vue_type_script_setup_true_lang-D0eEXpKb.js";import"./XdGoodsSpecText.vue_vue_type_style_index_0_lang-ByTxZYGa.js";import"./lodash-BWOl0Kus.js";import"./vue-BVU6FK7v.js";export{e as default};
