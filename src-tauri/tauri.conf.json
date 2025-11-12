@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "快销客V2.0",
-  "version": "2.0.13",
+  "version": "2.0.15",
   "identifier": "com.lzwl.kxkpcapp",
   "build": {
     "frontendDist": "../dist",
@@ -57,8 +57,7 @@
     "windows": {
       "allowDowngrades": true,
       "certificateThumbprint": null,
-      "digestAlgorithm": null,
-      "nsis": null,
+      "digestAlgorithm": "sha256",
       "signCommand": null,
       "timestampUrl": null,
       "tsp": false,
@@ -68,6 +67,11 @@
       },
       "wix": {
         "language": "zh-CN" 
+      },
+      "nsis": {
+        "languages": ["SimpChinese"],
+        "installerIcon": "icons/icon.ico",
+        "installMode": "both"
       }
     }
   },
