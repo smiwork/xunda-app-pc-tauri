@@ -6,7 +6,7 @@
  * @Description: 
  * 
 -->
-## xunda-app-pc-build 
+## xunda-app-pc-tauri 
 
  
 
@@ -19,19 +19,25 @@ pnpm  run tauri:build-icon
 
 ## 3. 配置 updater 更新插件
 wiki:https://v2.tauri.app/zh-cn/plugin/updater/
+https://github.com/tauri-apps/tauri-action/tree/v0.6.0/
+
 ```bash
 ## 安装 Tauri 更新插件开始
 pnpm tauri add updater
 
 # 在 src-tauri/tauri.conf.json 中配置 updater 插件，主要涉及以下设置
 {
+  "bundle":{
+      "active": true,
+      "createUpdaterArtifacts": true
+  },
   "plugins": {
     "updater": {
       "pubkey": "YOUR_PUBLIC_KEY_HERE",
       "endpoints": [
         "https://your-update-server.com/updates/{{target}}/{{current_version}}"
       ],
-      "createUpdaterArtifacts": true
+     
     }
   }
 }
@@ -83,7 +89,6 @@ tauri signer generate -w .tauri/kxkpcapp.key
 
 重要提示：
 - signature 字段的值是 Tauri 构建生成的 .sig 签名文件的内容，而不是文件路径。
-
 - pub_date 必须遵循 RFC 3339 格式。
 
 
@@ -177,7 +182,7 @@ async fn check_for_update(app: tauri::AppHandle) -> Result<String, String> {
 ```
 
 ## 问题汇总
-#### 1.打包时遇到 TAURI_SIGNING_PRIVATE_KEY 签名错误
+#### 1.本地打包时遇到 TAURI_SIGNING_PRIVATE_KEY 签名错误
 ```
 A public key has been found, but no private key. Make sure to set `TAURI_SIGNING_PRIVATE_KEY` environment variable.
        Error A public key has been found, but no private key. Make sure to set `TAURI_SIGNING_PRIVATE_KEY` environment variable.
