@@ -3,6 +3,7 @@
   "productName": "快销客V2.0",
   "version": "2.0.16",
   "identifier": "com.lzwl.kxkpcapp",
+  "mainBinaryName": "kxkpcapp",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:5174/",
@@ -27,15 +28,13 @@
   },
   "bundle": {
     "active": true,
-    "category": "DeveloperTool",
+    "category": "DeveloperTool", 
     "shortDescription": "快销客、手机开单、生意好帮手",
     "longDescription": "快销客、手机开单、生意好帮手。快销客主要为商贸公司、小批发商、线下门店等，提供一套标准的进销存软件，支持业务快捷开单、商品及库存管理、客户与供应商往来账目核算，数据智能化管理，提供销售及经营数据分析与统计。",
     "copyright": "Copyright (c) 武汉零智未来科技有限公司 2023. All rights reserved.",
     "targets": "all",
     "icon": [
-      "icons/30x30.png",
       "icons/32x32.png",
-      "icons/64x64.png",
       "icons/128x128.png",
       "icons/128x128@2x.png",
       "icons/icon.png",
@@ -79,20 +78,26 @@
         "languages": ["SimpChinese"],
         "installerIcon": "icons/icon.ico",
         "installMode": "both",
-        "minimumWebview2Version": "109.0.1518.78"
+        "minimumWebview2Version": "109.0.1518.78",
+        "headerImage":"assets/imgs/header150x57.png",
+        "sidebarImage":"assets/imgs/sidebar164x364.jpg"
       }
-    }
+    },
+    "createUpdaterArtifacts": true
   },
   "plugins": {
     "shell": {
       "open": "^[a-zA-Z][a-zA-Z0-9+\\-.]*:\\/\\/[^\\s]+"
     },
     "updater": {
-      "pubkey": "YOUR_PUBLIC_KEY_HERE",
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IERGODBENTFEODcxQjczMjQKUldRa2N4dUhIZFdBM3pDZVE4SHY1eEk0dXlQWE5ORDNDNkN5Zm5rKzQ5VjFRRTFDTEF4T3BIdmoK",
       "endpoints": [
-        "https://smiwork.com/package/updater-v2.json"
+        "https://smiwork.com/package/updater-v2.json",
+        "https://github.com/smiwork/xunda-app-pc-build/releases/latest/download/latest.json"
       ],
-      "createUpdaterArtifacts": true
+      "windows": {
+        "installMode": "passive"
+      }
     }
   }
 }

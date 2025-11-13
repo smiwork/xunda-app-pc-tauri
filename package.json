@@ -8,13 +8,17 @@
   "homepage": "https://smiwork.com",
   "scripts": {
     "tauri:dev": "tauri dev",
-    "tauri:prod": "tauri build"
+    "tauri:prod": "tauri build",
+    "tauri:build-icon": "tauri icon app-icon.png",
+    "gitpush": "git add . && git commit -m 'update v8' && git push"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.9.0",
-    "@tauri-apps/plugin-fs": "^2.4.1",
     "@tauri-apps/plugin-dialog": "^2.4.2",
-    "@tauri-apps/plugin-http": "^2.5.2"
+    "@tauri-apps/plugin-fs": "^2.4.1",
+    "@tauri-apps/plugin-http": "^2.5.2",
+    "@tauri-apps/plugin-process": "~2",
+    "@tauri-apps/plugin-updater": "~2"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.7.1",
