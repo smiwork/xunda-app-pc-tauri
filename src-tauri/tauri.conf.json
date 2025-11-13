@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "快销客V2.0",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "identifier": "com.lzwl.kxkpcapp",
   "build": {
     "frontendDist": "../dist",
@@ -27,8 +27,13 @@
   },
   "bundle": {
     "active": true,
+    "category": "DeveloperTool",
+    "shortDescription": "快销客、手机开单、生意好帮手",
+    "longDescription": "快销客、手机开单、生意好帮手。快销客主要为商贸公司、小批发商、线下门店等，提供一套标准的进销存软件，支持业务快捷开单、商品及库存管理、客户与供应商往来账目核算，数据智能化管理，提供销售及经营数据分析与统计。",
+    "copyright": "Copyright (c) 武汉零智未来科技有限公司 2023. All rights reserved.",
     "targets": "all",
     "icon": [
+      "icons/30x30.png",
       "icons/32x32.png",
       "icons/128x128.png",
       "icons/128x128@2x.png",
@@ -63,7 +68,7 @@
       "tsp": false,
       "webviewInstallMode": {
         "silent": true,
-        "type": "downloadBootstrapper"
+        "type": "embedBootstrapper"
       },
       "wix": {
         "language": "zh-CN" 
@@ -71,13 +76,21 @@
       "nsis": {
         "languages": ["SimpChinese"],
         "installerIcon": "icons/icon.ico",
-        "installMode": "both"
+        "installMode": "both",
+        "minimumWebview2Version": "109.0.1518.78"
       }
     }
   },
   "plugins": {
     "shell": {
       "open": "^[a-zA-Z][a-zA-Z0-9+\\-.]*:\\/\\/[^\\s]+"
+    },
+    "updater": {
+      "pubkey": "YOUR_PUBLIC_KEY_HERE",
+      "endpoints": [
+        "https://smiwork.com/package/updater-v2.json"
+      ],
+      "createUpdaterArtifacts": true
     }
   }
 }

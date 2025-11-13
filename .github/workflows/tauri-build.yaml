@@ -51,6 +51,12 @@ jobs:
       - name: install frontend dependencies
         run: yarn install # change this to npm, pnpm or bun depending on which one you use.
 
+      # 使用 rust-cache Action 可以缓存 Cargo 的注册表和构建工件，大幅减少后续构建的时间
+      - name: Cache Rust build artifacts
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -60,6 +66,7 @@ jobs:
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "App v__VERSION__"
           releaseBody: "See the assets to download this version and install."
-          releaseDraft: true
-          prerelease: false
+          #将 releaseDraft 设置为 true，这样会自动创建 Release 草稿而不是直接发布，给你一个检查确认的机会
+          releaseDraft: false 
+          prerelease: true
           args: ${{ matrix.args }}
