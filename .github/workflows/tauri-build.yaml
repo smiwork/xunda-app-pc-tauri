@@ -67,6 +67,6 @@ jobs:
           releaseName: "App v__VERSION__"
           releaseBody: "See the assets to download this version and install."
           #将 releaseDraft 设置为 true，这样会自动创建 Release 草稿而不是直接发布，给你一个检查确认的机会
-          releaseDraft: false 
-          prerelease: true
+          releaseDraft: true
+          prerelease: false
           args: ${{ matrix.args }}
