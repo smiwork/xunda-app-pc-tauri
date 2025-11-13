@@ -20,6 +20,7 @@ pnpm  run tauri:build-icon
 ## 3. 配置 updater 更新插件
 wiki:https://v2.tauri.app/zh-cn/plugin/updater/
 https://github.com/tauri-apps/tauri-action/tree/v0.6.0/
+https://blog.csdn.net/weixin_44786530/article/details/147991182
 
 ```bash
 ## 安装 Tauri 更新插件开始
