@@ -1,1 +1,0 @@
-import{k as s}from"./index-CA7rAtbX.js";const e=e=>s.get("stock/warehouse/list",e),o=(e,o)=>s.post("stock/warehouse/save",{data:e,id:o}),t=e=>s.post("stock/warehouse/delete",{id:e}),a=(e,o)=>s.post("stock/warehouse/updateLock",{id:e,locked:o});export{t as d,e as l,o as s,a as u};
