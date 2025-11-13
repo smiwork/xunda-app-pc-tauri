@@ -2,7 +2,7 @@
  * @Author: “chenbaolong”
  * @Date: 2025-11-12 12:24:58
  * @LastEditors: “chenbaolong”
- * @LastEditTime: 2025-11-13 11:04:35
+ * @LastEditTime: 2025-11-13 13:39:40
  * @Description: 
  * 
 -->
@@ -159,3 +159,19 @@ async fn check_for_update(app: tauri::AppHandle) -> Result<String, String> {
 - 版本管理：每次发布新版本前，务必更新 tauri.conf.json 中的 version 字段，并确保更新服务器返回的 version 高于当前版本。
 
 - 插件引入：确保你已在 Cargo.toml 中添加了 tauri-plugin-updater 依赖，并在应用初始化时注册了该插件。
+
+
+### 打包应用程序
+```json
+
+{
+  "nsis": {
+        "languages": ["SimpChinese"],
+        "installerIcon": "icons/icon.ico",
+        "installMode": "both",
+        "minimumWebview2Version": "109.0.1518.78",
+        "headerImage":"assets/imgs/header150x57.png",
+        "sidebarImage":"assets/imgs/sidebar164x364.jpg"  
+      }
+}
+```

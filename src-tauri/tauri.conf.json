@@ -78,9 +78,7 @@
         "languages": ["SimpChinese"],
         "installerIcon": "icons/icon.ico",
         "installMode": "both",
-        "minimumWebview2Version": "109.0.1518.78",
-        "headerImage":"assets/imgs/header150x57.png",
-        "sidebarImage":"assets/imgs/sidebar164x364.jpg"
+        "minimumWebview2Version": "109.0.1518.78"
       }
     },
     "createUpdaterArtifacts": true
@@ -90,6 +88,7 @@
       "open": "^[a-zA-Z][a-zA-Z0-9+\\-.]*:\\/\\/[^\\s]+"
     },
     "updater": {
+      "active": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IERGODBENTFEODcxQjczMjQKUldRa2N4dUhIZFdBM3pDZVE4SHY1eEk0dXlQWE5ORDNDNkN5Zm5rKzQ5VjFRRTFDTEF4T3BIdmoK",
       "endpoints": [
         "https://smiwork.com/package/updater-v2.json",

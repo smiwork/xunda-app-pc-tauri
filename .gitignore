@@ -27,6 +27,8 @@ coverage
 *.sln
 *.sw?
 
+.env
+
 dist
 src-tauri/target/
 src-tauri/gen/schemas
