@@ -91,7 +91,7 @@
       "active": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IERGODBENTFEODcxQjczMjQKUldRa2N4dUhIZFdBM3pDZVE4SHY1eEk0dXlQWE5ORDNDNkN5Zm5rKzQ5VjFRRTFDTEF4T3BIdmoK",
       "endpoints": [
-        "https://github.com/smiwork/xunda-app-pc-build/releases/latest/download/latest.json",
+        "https://github.com/smiwork/xunda-app-pc-tauri/releases/latest/download/latest.json",
         "https://smiwork.com/package/updater-v2.json"
       ],
       "windows": {

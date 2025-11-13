@@ -2,7 +2,7 @@
  * @Author: “chenbaolong”
  * @Date: 2025-11-12 12:24:58
  * @LastEditors: “chenbaolong”
- * @LastEditTime: 2025-11-13 17:00:06
+ * @LastEditTime: 2025-11-13 20:29:52
  * @Description: 
  * 
 -->
@@ -195,4 +195,6 @@ echo 'export TAURI_SIGNING_PRIVATE_KEY="你的私钥内容"' >> ~/.zshrc
 echo 'export TAURI_KEY_PASSWORD="你的密码"' >> ~/.zshrc
 source ~/.zshrc
 ```
-
+#### 2.服务端打包时遇到 Signature not found for the updater JSON. Skipping upload..
+解决方案：https://github.com/tauri-apps/tauri-action/issues/975
+升级：uses: tauri-apps/tauri-action@v0.6
