@@ -2,7 +2,7 @@
  * @Author: “chenbaolong”
  * @Date: 2025-11-12 12:24:58
  * @LastEditors: “chenbaolong”
- * @LastEditTime: 2025-11-13 13:39:40
+ * @LastEditTime: 2025-11-13 17:00:06
  * @Description: 
  * 
 -->
@@ -175,3 +175,19 @@ async fn check_for_update(app: tauri::AppHandle) -> Result<String, String> {
       }
 }
 ```
+
+## 问题汇总
+#### 1.打包时遇到 TAURI_SIGNING_PRIVATE_KEY 签名错误
+```
+A public key has been found, but no private key. Make sure to set `TAURI_SIGNING_PRIVATE_KEY` environment variable.
+       Error A public key has been found, but no private key. Make sure to set `TAURI_SIGNING_PRIVATE_KEY` environment variable.
+ ELIFECYCLE  Command failed with exit code 1.
+```
+解决办法
+```bash
+# 添加到 ~/.bashrc 或 ~/.zshrc
+echo 'export TAURI_SIGNING_PRIVATE_KEY="你的私钥内容"' >> ~/.zshrc
+echo 'export TAURI_KEY_PASSWORD="你的密码"' >> ~/.zshrc
+source ~/.zshrc
+```
+
