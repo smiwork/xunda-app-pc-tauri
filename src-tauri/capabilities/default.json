@@ -26,6 +26,7 @@
     "core:webview:allow-print",
     "core:webview:allow-create-webview",
     "core:webview:allow-create-webview-window",
+    "core:app:allow-default-window-icon",
     "shell:default",
     "shell:allow-execute",
     "shell:allow-open",
@@ -34,6 +35,22 @@
     "dialog:default",
     "fs:default",
     "fs:write-all",
+    {
+      "identifier": "fs:allow-exists",
+      "allow": [
+        {
+          "path": "$APPDATA/*"
+        }
+      ]
+    },
+    {
+      "identifier": "fs:allow-exists",
+      "allow": [
+        {
+          "path": "$RESOURCE/*"
+        }
+      ]
+    },
     "http:default",
     "http:allow-fetch",
     {
@@ -66,6 +83,8 @@
     "updater:allow-download-and-install",
     "process:default",
     "process:allow-restart",
-    "process:allow-exit"
+    "process:allow-exit",
+    "notification:default",
+    "notification:allow-notify"
   ]
 }

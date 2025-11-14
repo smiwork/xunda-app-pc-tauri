@@ -1,0 +1,1 @@
+import{j as t}from"./index-n_nvUq0t.js";function s(s){return t.get("system/tag/listTag",s)}const a=s=>t.get("system/tag/getTag",{tagId:s}),g=(s,a)=>t.post("system/tag/saveTag",{data:s,tagId:a}),e=s=>t.post("system/tag/deleteTag",{tagId:s});export{e as d,a as g,s as l,g as s};

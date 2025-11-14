@@ -1,13 +1,13 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "kxkpcapp",
-  "version": "2.0.13",
+  "productName": "快销客V2.0",
+  "version": "2.0.11",
   "identifier": "com.lzwl.kxkpcapp",
   "mainBinaryName": "kxkpcapp",
   "build": {
     "frontendDist": "../dist",
-    "devUrl": "http://localhost:5174/",
-    "beforeDevCommand": "vite --host --mode tauri-dev",
+    "devUrl": "http://localhost:5175/dist/",
+    "beforeDevCommand": "http-server -p 5175 -o ./dist",
     "beforeBuildCommand": ""
   },
   "app": {
@@ -16,6 +16,8 @@
         "title": "快销客V2.0",
         "width": 1280,
         "height": 800,
+        "minHeight": 500,
+        "minWidth": 700,
         "center": true,
         "resizable": true,
         "fullscreen": false,
@@ -23,17 +25,21 @@
       }
     ],
     "security": {
-      "csp": null
+      "csp": "null",
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "$RESOURCE/*",
+          "$APPDATA/kxkpcapp.db",
+          "$APPDATA/*"
+        ]
+      }
     }
   },
   "bundle": {
     "active": true,
     "createUpdaterArtifacts": true,
-    "category": "DeveloperTool", 
-    "shortDescription": "快销客、手机开单、生意好帮手",
-    "longDescription": "快销客、手机开单、生意好帮手。快销客主要为商贸公司、小批发商、线下门店等，提供一套标准的进销存软件，支持业务快捷开单、商品及库存管理、客户与供应商往来账目核算，数据智能化管理，提供销售及经营数据分析与统计。",
-    "copyright": "Copyright (c) 武汉零智未来科技有限公司 2023. All rights reserved.",
-    "targets": "all",
+    "category": "Productivity", 
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
@@ -42,7 +48,16 @@
       "icons/icon.icns",
       "icons/icon.ico"
     ],
+    "resources": {
+      "assets/done.mp3": "done.mp3",
+      "assets/alert.mp3": "alert.mp3"
+    },
+    "shortDescription": "快销客、手机开单、生意好帮手",
+    "longDescription": "快销客、手机开单、生意好帮手。快销客主要为商贸公司、小批发商、线下门店等，提供一套标准的进销存软件，支持业务快捷开单、商品及库存管理、客户与供应商往来账目核算，数据智能化管理，提供销售及经营数据分析与统计。",
+    "copyright": "Copyright (c) 武汉零智未来科技有限公司 2023. All rights reserved.",
+    "targets": "all",
     "macOS": {
+      "bundleName": "KxkApp",
       "dmg": {
         "appPosition": {
           "x": 180,
@@ -91,6 +106,7 @@
       "dangerousInsecureTransportProtocol": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IERGODBENTFEODcxQjczMjQKUldRa2N4dUhIZFdBM3pDZVE4SHY1eEk0dXlQWE5ORDNDNkN5Zm5rKzQ5VjFRRTFDTEF4T3BIdmoK",
       "endpoints": [
+        "https://smiwork.com/package/latest.json",
         "https://github.com/smiwork/xunda-app-pc-tauri/releases/latest/download/latest.json"
       ],
       "windows": {

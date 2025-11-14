@@ -1,12 +1,13 @@
 [package]
 name = "app"
-version = "2.0.13"
-description = "xunda-app-pc-ts"
+version = "2.0.11"
+description = "xunda-app-pc"
 authors = ["chenbaolong"]
 license = ""
 repository = ""
 edition = "2021"
 rust-version = "1.77.2"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -22,13 +23,13 @@ log = "0.4"
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 # features "devtools"
-tauri = { version = "2.9.0", features = ["unstable"] } 
+tauri = { version = "2.9.0", features = ["protocol-asset", "unstable", "tray-icon", "devtools"] } 
 tauri-plugin-log = "2"
 tauri-plugin-dialog = "2.4.2" # 文件对话框
 tauri-plugin-http = "2" # http下载
 tauri-plugin-fs = "2" # http下载
 tauri-plugin-shell = "2.0.0"
-tauri-plugin-notification = { version = "2.0.0", features = [ "windows7-compat" ] }
+tauri-plugin-notification = { version = "2", features = ["windows7-compat"] }
 tauri-plugin-process = "2"
 
 # you can add the dependencies on the `[dependencies]` section if you do not target mobile

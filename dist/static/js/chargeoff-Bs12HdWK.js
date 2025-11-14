@@ -1,0 +1,1 @@
+import{j as e}from"./index-n_nvUq0t.js";const r=r=>e.get("finance/chargeoff/listOrders",r),s=r=>e.get("finance/chargeoff/getOrders",{ordersId:r}),a=r=>e.post("finance/chargeoff/createOrders",r),f=r=>e.post("finance/chargeoff/approvedOrders",{ordersId:r}),o=r=>e.post("finance/chargeoff/deleteOrders",{ordersId:r});export{f as a,a as c,o as d,s as g,r as l};
