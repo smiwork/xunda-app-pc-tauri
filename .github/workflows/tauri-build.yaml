@@ -57,7 +57,8 @@ jobs:
         with:
           workspaces: './src-tauri -> target'
 
-      - uses: tauri-apps/tauri-action@v0
+      # - uses: tauri-apps/tauri-action@v0
+      - uses: baipgydx729/tauri-action-cn@release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }} 
@@ -73,8 +74,19 @@ jobs:
           updaterJsonPreferNsis: true
           args: ${{ matrix.args }}
 
-      - name: Upload release artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: release-${{ matrix.platform }}
-          path: src-tauri/target/release/bundle/**
+      # - name: Upload release artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: release-${{ matrix.platform }}
+      #     path: src-tauri/target/release/bundle/**
+
+      # - name: Upload release TO Server
+      #   uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+      #   with:
+      #     username: 'root'
+      #     server: '${{ secrets.SSH_SERVER_IP }}'
+      #     ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     local_path: './src-tauri/target/*'
+      #     remote_path: '/www/wwwroot/www.smiwork.com/package/latest'
+      #     rsyncArgs: '--exclude=*.map'
+      #     sftpArgs: '-o ConnectTimeout=5'
