@@ -58,7 +58,7 @@ jobs:
           workspaces: './src-tauri -> target'
 
       # - uses: tauri-apps/tauri-action@v0
-      - uses: baipgydx729/tauri-action-cn@v2
+      - uses: baipgydx729/tauri-action-cn@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }} 
