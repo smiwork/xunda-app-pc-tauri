@@ -1,1 +1,0 @@
-import{ab as r,a7 as e}from"./vue-BVU6FK7v.js";import{e as o}from"./index-n_nvUq0t.js";function t(){const t=r(),s=e(),u=o();return{route:t,router:s,closePage:r=>{u.closeCurrent(r)},closeCurrent:()=>{u.closeCurrent(t.path)}}}export{t as u};
