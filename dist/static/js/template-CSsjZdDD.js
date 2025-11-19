@@ -1,0 +1,1 @@
+import{j as e}from"./index-CMAQZF_A.js";function t(t){return e.get("deliver/template/listTemplate",t)}function a(t,a){return e.post("deliver/template/saveTemplate",{data:t,id:a})}function l(t){return e.post("deliver/template/deleteTemplate",{id:t})}export{l as d,t as l,a as s};
