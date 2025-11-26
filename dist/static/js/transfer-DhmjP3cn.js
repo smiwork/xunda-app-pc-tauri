@@ -1,1 +1,0 @@
-import{j as r}from"./index-CMAQZF_A.js";const e=e=>r.get("finance/transfer/listOrders",e),s=e=>r.get("finance/transfer/getOrders",{ordersId:e}),a=e=>r.post("finance/transfer/approvedOrders",{ordersId:e}),d=(e,s)=>r.post("finance/transfer/saveOrders",{data:e,ordersId:s}),n=e=>r.post("finance/transfer/deleteOrders",{ordersId:e});export{a,n as d,s as g,e as l,d as s};

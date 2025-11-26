@@ -1,6 +1,6 @@
 [package]
 name = "app"
-version = "2.0.16"
+version = "2.0.17"
 description = "xunda-app-pc"
 authors = ["chenbaolong"]
 license = ""

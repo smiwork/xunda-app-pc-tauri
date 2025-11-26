@@ -1,0 +1,1 @@
+import{j as r}from"./index-DLGOcCat.js";const s=s=>r.get("stock/orders/listOrders",s),e=s=>r.get("stock/orders/exportOrders",s),o=s=>r.get("stock/orders/getOrders",{ordersId:s}),d=s=>r.post("stock/orders/approvedOrders",{ordersId:s}),t=s=>r.post("stock/orders/deleteOrders",{ordersId:s});export{d as a,t as d,e,o as g,s as l};
