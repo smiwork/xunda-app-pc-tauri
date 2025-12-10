@@ -1,0 +1,1 @@
+import{f as t}from"./index-B4Vyva5B.js";import{c as n}from"./vue-DNMFDplI.js";const r={xs:576,sm:576,md:768,lg:992,xl:1200,xxl:1600};function s(){const s=t(r).current();return{breakpoint:n(()=>{const t=s.value;return t.length?t[t.length-1]:"xs"})}}export{s as u};

@@ -1,0 +1,1 @@
+import{e as s,n as a,k as l,m as e,z as t,u as i}from"./vue-DNMFDplI.js";const o={class:"label-item"},d={class:"label"},m={class:"value"},n=s({__name:"index",props:{label:String},setup:s=>(n,p)=>(l(),a("div",o,[e("div",d,t(s.label),1),e("div",m,[i(n.$slots,"default")])]))});export{n as _};

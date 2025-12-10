@@ -1,6 +1,6 @@
 {
   "name": "xunda-app-pc-ts",
-  "version": "2.0.17",
+  "version": "2.0.23",
   "private": false,
   "description": "快销客PC端",
   "author": "chenbaolong",
@@ -10,7 +10,7 @@
     "tauri:dev": "tauri dev",
     "tauri:prod": "tauri build",
     "tauri:build-icon": "tauri icon app-icon.png",
-    "gitpush": "git add . && git commit -m 'update v2.0.17' && git push"
+    "gitpush": "git add . && git commit -m 'update v2.0.23' && git push"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.9.0",

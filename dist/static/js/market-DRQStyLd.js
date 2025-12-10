@@ -1,1 +1,0 @@
-import{j as p}from"./index-DLGOcCat.js";const t=t=>p.get("system/market/listMarketApp",t),s=t=>p.get("system/market/listApplyApp",t),a=t=>p.get("system/market/getApplyApp",{appId:t}),e=(t,s)=>p.post("system/market/updateApplyAppSet",{appId:t,data:s}),m=(t,s)=>p.post("system/market/updateApplyAppStatus",{appId:t,status:s});export{e as a,t as b,a as g,s as l,m as u};
