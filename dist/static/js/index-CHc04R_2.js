@@ -1,0 +1,1 @@
+import{a}from"./dayjs-CfOid8xN.js";import{e as s,n as o,k as e,z as t,a1 as r}from"./vue-Bo3bxJhT.js";import{_ as i}from"./index-Og_6T2KW.js";const m={class:"gi-footer"},n=i(s({name:"GiFooter",__name:"index",setup(s){const i=a(new Date).format("YYYY");return(a,s)=>(e(),o("div",m,"Copyright @"+t(r(i))+" 武汉零智未来科技有限公司",1))}}),[["__scopeId","data-v-0a188955"]]);export{n as _};

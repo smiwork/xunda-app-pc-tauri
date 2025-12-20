@@ -1,0 +1,1 @@
+import{j as e}from"./index-Og_6T2KW.js";function s(s){return e.get("deliver/address/listAddress",s)}function d(s,d){return e.post("deliver/address/saveAddress",{data:s,id:d})}function r(s){return e.post("deliver/address/deleteAddress",{id:s})}export{r as d,s as l,d as s};
