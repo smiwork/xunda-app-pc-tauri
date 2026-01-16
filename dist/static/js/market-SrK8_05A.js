@@ -1,0 +1,1 @@
+import{j as p}from"./index-Cd7NW8Mc.js";const t=t=>p.get("extends/market/listMarketApp",t),e=t=>p.get("extends/market/listApplyApp",t),a=t=>p.get("extends/market/getApplyApp",{appId:t}),s=(t,e)=>p.post("extends/market/updateApplyAppSet",{appId:t,data:e}),d=(t,e)=>p.post("extends/market/updateApplyAppStatus",{appId:t,status:e});export{s as a,t as b,a as g,e as l,d as u};

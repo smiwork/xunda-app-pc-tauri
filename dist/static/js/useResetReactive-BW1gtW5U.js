@@ -1,0 +1,1 @@
+import{b as s}from"./lodash-Cm_3iY7H.js";import{r as e}from"./vue-Bo3bxJhT.js";function o(o){const r=()=>s(o),t=e(r());return[t,()=>{Object.keys(t).forEach(s=>delete t[s]),Object.assign(t,r())}]}export{o as u};

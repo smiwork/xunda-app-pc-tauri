@@ -1,0 +1,1 @@
+import"./index-Cd7NW8Mc.js";import{u as t}from"./dict-B7A8Wili.js";import{c as i}from"./vue-Bo3bxJhT.js";function o(o){const s=t();return{data:i(()=>s.dictData[o.code]),dicts:i(()=>s.dictList)}}export{o as u};
