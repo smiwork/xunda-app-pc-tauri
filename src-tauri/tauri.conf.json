@@ -57,6 +57,10 @@
     "copyright": "Copyright (c) 武汉零智未来科技有限公司 2023. All rights reserved.",
     "targets": "all",
     "macOS": {
+      "signingIdentity": "Apple Distribution: BaoLong CHEN (HFP5W9KJYY)",
+      "hardenedRuntime": true,
+      "entitlements": "./.mac-sign/entitlements.plist",
+      "providerShortName": "HFP5W9KJYY",
       "bundleName": "KxkApp",
       "dmg": {
         "appPosition": {
@@ -73,7 +77,6 @@
         }
       },
       "files": {},
-      "hardenedRuntime": true,
       "minimumSystemVersion": "10.13"
     },
     "windows": {
