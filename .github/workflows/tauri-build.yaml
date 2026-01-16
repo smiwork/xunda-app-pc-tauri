@@ -97,6 +97,7 @@ jobs:
           APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }} # Apple ID 密码
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
 
+          #使用 App Store Connect API 密钥（而不是 Apple ID）进行身份验证。仅在您对应用进行公证时需要。
           # APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
           # APPLE_API_KEY: ${{ secrets.APPLE_API_KEY }}
           # APPLE_API_KEY_PATH: "${{ runner.temp }}/authkey.p8"

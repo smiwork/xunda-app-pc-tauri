@@ -25,7 +25,7 @@ serde = { version = "1.0", features = ["derive"] }
 # features "devtools"
 tauri = { version = "2.9.0", features = ["protocol-asset", "unstable", "tray-icon", "devtools"] } 
 tauri-plugin-log = "2"
-tauri-plugin-dialog = "2.6.0" # 文件对话框
+tauri-plugin-dialog = "2" # 文件对话框
 tauri-plugin-http = "2" # http下载
 tauri-plugin-fs = "2" # http下载
 tauri-plugin-shell = "2.0.0"
