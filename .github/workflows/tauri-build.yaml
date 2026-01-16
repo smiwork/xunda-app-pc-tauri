@@ -56,13 +56,36 @@ jobs:
         uses: Swatinem/rust-cache@v2
         with:
           workspaces: './src-tauri -> target'
+      
+      - name: Setup Apple Code Signing
+        env:
+          CERTIFICATE_DATA: ${{ secrets.APPLE_CERTIFICATE }}
+          CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          API_PRIVATE_KEY: ${{ secrets.APPLE_API_PRIVATE_KEY }}
+        run: |
+          # 1. 导入证书到临时钥匙串
+          echo $CERTIFICATE_DATA | base64 --decode > certificate.p12
+          security create-keychain -p ci-build build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p ci-build build.keychain
+          security import certificate.p12 -P "$CERTIFICATE_PASSWORD" -k build.keychain -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k build.keychain
+          rm certificate.p12
 
-      # - uses: tauri-apps/tauri-action@v0
-      - uses: baipgydx729/tauri-action-cn@v3
+          # 2. 动态创建 .p8 私钥文件
+          echo $API_PRIVATE_KEY | base64 --decode > "$RUNNER_TEMP/authkey.p8"
+          echo "私钥文件已创建于: $RUNNER_TEMP/authkey.p8"
+
+      - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }} 
-          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }} 
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+
+          APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
+          APPLE_API_KEY: ${{ secrets.APPLE_API_KEY }}
+          # 关键：指向刚才动态创建的 .p8 文件路径
+          APPLE_API_KEY_PATH: "${{ runner.temp }}/authkey.p8"
         with:
           tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "App v__VERSION__"
@@ -73,20 +96,3 @@ jobs:
           includeUpdaterJson: true
           updaterJsonPreferNsis: true
           args: ${{ matrix.args }}
-
-      # - name: Upload release artifacts
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: release-${{ matrix.platform }}
-      #     path: src-tauri/target/release/bundle/**
-
-      # - name: Upload release TO Server
-      #   uses: wlixcc/SFTP-Deploy-Action@v1.2.6
-      #   with:
-      #     username: 'root'
-      #     server: '${{ secrets.SSH_SERVER_IP }}'
-      #     ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-      #     local_path: './src-tauri/target/*'
-      #     remote_path: '/www/wwwroot/www.smiwork.com/package/latest'
-      #     rsyncArgs: '--exclude=*.map'
-      #     sftpArgs: '-o ConnectTimeout=5'
