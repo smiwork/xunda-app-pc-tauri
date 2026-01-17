@@ -57,10 +57,10 @@
     "copyright": "Copyright (c) 武汉零智未来科技有限公司 2023. All rights reserved.",
     "targets": "all",
     "macOS": {
-      "signingIdentity": "Apple Development: BaoLong CHEN (PVKJ8A4UA3)",
+       "signingIdentity": "Developer ID Application: BaoLong CHEN (HFP5W9KJYY)",
+      "entitlements": "../deploy-config/macos/entitlements.plist",
       "hardenedRuntime": true,
-      "entitlements": "./.mac-sign/entitlements.plist",
-      "providerShortName": "PVKJ8A4UA3",
+      "providerShortName": "HFP5W9KJYY",
       "bundleName": "KxkApp",
       "dmg": {
         "appPosition": {
