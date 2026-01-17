@@ -1,4 +1,4 @@
-name: "publish"
+name: "tauri-build-macos"
 
 on:
   push:
@@ -57,36 +57,58 @@ jobs:
         with:
           workspaces: './src-tauri -> target'
 
+      - name: Import Apple Developer Certificate
+        env:
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+        run: |
+          echo $APPLE_CERTIFICATE | base64 --decode > certificate.p12
+          security create-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
+          security set-keychain-settings -t 3600 -u build.keychain
+          security import certificate.p12 -k build.keychain -P "$APPLE_CERTIFICATE_PASSWORD" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" build.keychain
+          security find-identity -v -p codesigning build.keychain
+      - name: Verify Certificate
+        run: |
+          CERT_INFO=$(security find-identity -v -p codesigning build.keychain | grep "Apple Distribution")
+          CERT_ID=$(echo "$CERT_INFO" | awk -F'"' '{print $2}')
+          echo "CERT_ID=$CERT_ID" >> $GITHUB_ENV
+          echo "Certificate imported."
+      
       - uses: tauri-apps/tauri-action@v0
       # - uses: baipgydx729/tauri-action-cn@v3
         env:
+          # 用于发布 GitHub Release 的 token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 用于应用升级更新时签名的私钥
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }} 
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }} 
+
+          # 以下用于macos应用打包时用到的证书和签名信息
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }} #证书内容:由certificate.p12转换为base64得出
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }} #证书密码
+          APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+
+          # 直接使用 Apple ID 和密码进行签名
+          APPLE_ID: ${{ secrets.APPLE_ID }} # Apple ID
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }} # Apple ID 密码
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+
+          #使用 App Store Connect API 密钥（而不是 Apple ID）进行身份验证。仅在您对应用进行公证时需要。
+          # APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
+          # APPLE_API_KEY: ${{ secrets.APPLE_API_KEY }}
+          # APPLE_API_KEY_PATH: "${{ runner.temp }}/authkey.p8"
+
         with:
-          tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
-          releaseName: "App v__VERSION__"
+          tagName: app-mac__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
+          releaseName: "App mac__VERSION__"
           releaseBody: "See the assets to download this version and install."
           #将 releaseDraft 设置为 true，这样会自动创建 Release 草稿而不是直接发布，给你一个检查确认的机会
-          releaseDraft: false
+          releaseDraft: true
           prerelease: false
           includeUpdaterJson: true
           updaterJsonPreferNsis: true
           args: ${{ matrix.args }}
-
-      # - name: Upload release artifacts
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: release-${{ matrix.platform }}
-      #     path: src-tauri/target/release/bundle/**
-
-      # - name: Upload release TO Server
-      #   uses: wlixcc/SFTP-Deploy-Action@v1.2.6
-      #   with:
-      #     username: 'root'
-      #     server: '${{ secrets.SSH_SERVER_IP }}'
-      #     ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-      #     local_path: './src-tauri/target/*'
-      #     remote_path: '/www/wwwroot/www.smiwork.com/package/latest'
-      #     rsyncArgs: '--exclude=*.map'
-      #     sftpArgs: '-o ConnectTimeout=5'
