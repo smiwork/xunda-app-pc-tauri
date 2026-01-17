@@ -61,7 +61,7 @@
       "entitlements": "../deploy-config/macos/entitlements.plist",
       "hardenedRuntime": true,
       "providerShortName": "HFP5W9KJYY",
-      "bundleName": "KxkApp",
+      "bundleName": "kxkpcapp",
       "dmg": {
         "appPosition": {
           "x": 180,

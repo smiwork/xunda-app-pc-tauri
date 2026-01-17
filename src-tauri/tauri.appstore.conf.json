@@ -2,7 +2,7 @@
   "bundle": {
     "macOS": {
       "signingIdentity": "Apple Distribution: BaoLong CHEN (HFP5W9KJYY)",
-      "entitlements": "../deploy-config/macos/entitlements.plist",
+      "entitlements": "../deploy-config/macos/entitlements-appstore.plist",
       "files": {
         "embedded.provisionprofile": "../deploy-config/macos/kxkpcappAppStore.provisionprofile"
       }

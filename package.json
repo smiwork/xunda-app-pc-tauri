@@ -7,6 +7,7 @@
   "l=icense": "Apache-2.0",
   "homepage": "https://smiwork.com",
   "scripts": {
+    "build": "bash ../deploy-build/build.sh",
     "tauri:dev": "tauri dev",
     "tauri:prod": "tauri build",
     "tauri:build-icon": "tauri icon app-icon.png",
