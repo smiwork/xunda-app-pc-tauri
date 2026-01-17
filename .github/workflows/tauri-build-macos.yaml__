@@ -87,7 +87,7 @@ jobs:
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }} 
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }} 
 
-          #1.macos应用打包时用到的证书和签名信息
+          #1.macos应用打包证书和签名信息
           APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }} #证书内容:由certificate.p12转换为base64得出
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }} #证书密码
           APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}

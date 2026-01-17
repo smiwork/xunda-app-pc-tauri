@@ -10,7 +10,13 @@
     "tauri:dev": "tauri dev",
     "tauri:prod": "tauri build",
     "tauri:build-icon": "tauri icon app-icon.png",
-    "gitpush": "git add . && git commit -m 'update v2.0.29' && git push"
+    "gitpush": "git add . && git commit -m 'update v2.0.29' && git push",
+    "build-macos": "tauri build --bundles app --target universal-apple-darwin",
+    "build-windows": "tauri build --bundles app --target universal-windows-msi",
+    "build-macos-appstore-aarch64": "tauri build --bundles app --target aarch64-apple-darwin  --config ./src-tauri/tauri.appstore.conf.json",
+    "build-macos-appstore-x86_64": "tauri build --bundles app --target x86_64-apple-darwin  --config ./src-tauri/tauri.appstore.conf.json",
+    "build-macos-appstore-pkg":"xcrun productbuild --sign '3rd Party Mac Developer Installer: BaoLong CHEN (HFP5W9KJYY)' --component ./src-tauri/target/x86_64-apple-darwin/release/bundle/macos/快销客V2.0.app  /Applications ./kxkapp.pkg",
+    "upload-pkg-to-appstore":"xcrun altool --upload-app --type macos --file kxkapp.pkg --apiKey $APPLE_API_KEY_ID --apiIssuer 40e482e8-0637-405e-bbe3-ad7f6d58aefd"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.9.0",

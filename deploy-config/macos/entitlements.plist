@@ -2,8 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <!-- App Store 必须启用沙盒 -->
     <key>com.apple.security.app-sandbox</key>
-    <true/>  <!-- App Store 必须启用沙盒 -->
+    <true/> 
+    <!-- 这里的格式必须是 TeamID.BundleID -->
+    <key>com.apple.application-identifier</key>
+    <string>HFP5W9KJYY.com.lzwl.kxkpcapp</string>
+    <key>com.apple.developer.team-identifier</key>
+    <string>HFP5W9KJYY</string>
     <key>com.apple.security.network.client</key>
     <true/>
     <key>com.apple.security.network.server</key>
