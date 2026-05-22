@@ -1,0 +1,40 @@
+{
+  "name": "快销客PC 2.0",
+  "short_name": "快销客、手机开单、生意好帮手",
+  "description": "快销客主要为商贸公司、小批发商、线下门店等，提供一套标准的进销存软件，支持业务快捷开单、商品及库存管理、客户与供应商往来账目核算，数据智能化管理，提供销售及经营数据分析与统计。",
+  "start_url": "/pc2/index.html",
+  "display": "standalone", // 显示模式：standalone, fullscreen, minimal-ui
+  "theme_color": "#e5e5e5",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "https://kxk.smiwork.com/pc2/static/icons/icon-114x114.png",
+      "sizes": "114x114"
+    },
+    {
+      "src": "https://kxk.smiwork.com/pc2/static/icons/icon-144x144.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "https://kxk.smiwork.com/pc2/static/icons/icon-152x152.png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "https://kxk.smiwork.com/pc2/static/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "https://kxk.smiwork.com/pc2/static/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://kxk.smiwork.com/pc2/static/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "scope": "/", // 应用的作用域
+  "orientation": "portrait" // 屏幕方向
+}

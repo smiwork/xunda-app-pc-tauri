@@ -1,0 +1,1 @@
+import{j as t}from"./index-DopMKN5Q.js";const s=s=>t.get("sales/report/getSalesStatsData",s),a=s=>t.get("sales/report/listSalesStatsDetail",s),e=s=>t.get("sales/report/groupSalesStatsByDate",s);export{s as a,e as g,a as l};

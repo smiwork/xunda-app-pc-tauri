@@ -1,1 +1,0 @@
-import{j as e}from"./index-Cd7NW8Mc.js";const r=r=>e.get("finance/incomepay/listOrders",r),s=r=>e.get("finance/incomepay/getOrders",{ordersId:r}),a=r=>e.post("finance/incomepay/createOrders",r),n=r=>e.post("finance/incomepay/approvedOrders",{ordersId:r}),o=r=>e.post("finance/incomepay/deleteOrders",{ordersId:r});export{n as a,a as c,o as d,s as g,r as l};
