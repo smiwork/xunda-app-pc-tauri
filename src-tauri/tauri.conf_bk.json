@@ -5,7 +5,7 @@
   "identifier": "com.lzwl.kxkpcapp",
   "mainBinaryName": "kxkpcapp",
   "build": {
-   "frontendDist": "../dist",
+    "frontendDist": "../dist",
     "devUrl": "http://localhost:5175/dist/",
     "beforeDevCommand": "http-server -p 5175 -o ./dist",
     "beforeBuildCommand": ""

@@ -20,13 +20,13 @@
     "upload-pkg-to-appstore":"xcrun altool --upload-app --type macos --file kxkapp.pkg --apiKey $APPLE_API_KEY_ID --apiIssuer 40e482e8-0637-405e-bbe3-ad7f6d58aefd"
   },
   "dependencies": {
-    "@tauri-apps/api": "^2.11.0",
-    "@tauri-apps/plugin-updater": "^2.10.1",
-    "@tauri-apps/plugin-dialog": "^2.7.1",
-    "@tauri-apps/plugin-fs": "^2.5.1",
+    "@tauri-apps/api": "^2.9.0",
+    "@tauri-apps/plugin-dialog": "^2.6.0",
+    "@tauri-apps/plugin-fs": "^2.4.1",
     "@tauri-apps/plugin-http": "^2.5.2",
     "@tauri-apps/plugin-notification": "~2",
-    "@tauri-apps/plugin-process": "~2"
+    "@tauri-apps/plugin-process": "~2",
+    "@tauri-apps/plugin-updater": "~2"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.7.1",
