@@ -1,1 +1,0 @@
-import{j as a}from"./index-7x6fZXlo.js";const e=e=>a.get("finance/dailyacc/listOrders",e),r=e=>a.get("finance/dailyacc/getOrders",{ordersId:e}),d=e=>a.post("finance/dailyacc/createOrders",e),s=e=>a.post("finance/dailyacc/approvedOrders",{ordersId:e}),c=e=>a.post("finance/dailyacc/deleteOrders",{ordersId:e});export{s as a,d as c,c as d,r as g,e as l};

@@ -1,0 +1,1 @@
+import{j as t}from"./index-B4cHJDrr.js";const e=e=>t.get("stock/trace/listBatch",e),a=e=>t.get("stock/trace/queryBatch",e),c=e=>t.get("stock/trace/getBatchDetail",{id:e}),s=e=>t.get("stock/trace/listSerialNo",e),r=e=>t.get("stock/trace/querySerialNo",e),o=e=>t.get("stock/trace/getSerialDetail",e);export{s as a,o as b,r as c,c as g,e as l,a as q};
